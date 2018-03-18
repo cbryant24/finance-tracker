@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
     def show
         puts "these are the params #{params}"
-        @user = User.find(params[:format])
+        @user = User.find(params[:id])
         @user_stocks = @user.stocks
     end
 end

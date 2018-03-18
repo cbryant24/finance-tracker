@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "user/registrations"}
   resources :user_stocks, only: [:create, :destroy]
-  # resources :user, only: [:show]
+  resources :users, only: [:show]
   resources :friendships
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -16,7 +16,5 @@ Rails.application.routes.draw do
   get 'search_friends', to: 'users#search'
 
   post 'add_friend', to: 'users#add_friend'
-
-  get 'user', to: 'users#show'
   
 end
